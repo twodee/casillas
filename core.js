@@ -2,6 +2,7 @@ var canvas = document.getElementById('canvas');
 var context = canvas.getContext('2d');
 var squares = [];
 var pixelSize = 50;
+var padding = 1;
 
 function draw() {
   context.clearRect(0, 0, canvas.width, canvas.height);
@@ -24,7 +25,7 @@ function draw() {
   context.fillStyle = '#000000';
   for (var i = 0; i < squares.length; ++i) {
     var square = squares[i];
-    context.fillRect(square[0] * pixelSize, square[1] * pixelSize, pixelSize, pixelSize);
+    context.fillRect(square[0] * pixelSize + padding, square[1] * pixelSize + padding, pixelSize - 2 * padding, pixelSize - 2 * padding);
   }
 }
 
